@@ -56,7 +56,7 @@ import versioned.host.exp.exponent.modules.api.UtilModule;
 import versioned.host.exp.exponent.modules.api.WebBrowserModule;
 import versioned.host.exp.exponent.modules.api.av.AVModule;
 import versioned.host.exp.exponent.modules.api.av.video.VideoViewManager;
-import versioned.host.exp.exponent.modules.api.components.tcp.TcpSocketsModule;
+import versioned.host.exp.exponent.modules.api.components.tcp.TcpSockets;
 import versioned.host.exp.exponent.modules.api.standalone.branch.RNBranchModule;
 import versioned.host.exp.exponent.modules.api.components.LinearGradientManager;
 import versioned.host.exp.exponent.modules.api.components.barcodescanner.BarCodeScannerModule;
@@ -165,6 +165,7 @@ public class ExponentPackage implements ReactPackage {
       nativeModules.add(new ExponentUnsignedAsyncStorageModule(reactContext));
     }
     nativeModules.add(new ImageCropperModule(reactContext));
+    nativeModules.add(new TcpSockets(reactContext));
 
     return nativeModules;
   }
@@ -189,8 +190,7 @@ public class ExponentPackage implements ReactPackage {
     addViewManagersFromPackages(reactContext, viewManagers, Arrays.<ReactPackage>asList(
       new SvgPackage(),
       new MapsPackage(),
-      new LottiePackage(),
-      new TcpSocketsModule()
+      new LottiePackage()
     ));
 
     return viewManagers;
