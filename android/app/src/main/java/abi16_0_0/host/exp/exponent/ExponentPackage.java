@@ -60,6 +60,7 @@ import abi16_0_0.host.exp.exponent.modules.api.components.lottie.LottiePackage;
 import abi16_0_0.host.exp.exponent.modules.api.components.maps.MapsPackage;
 import abi16_0_0.host.exp.exponent.modules.api.components.svg.RNSvgPackage;
 import abi16_0_0.host.exp.exponent.modules.api.components.tcp.TcpSockets;
+import abi16_0_0.host.exp.exponent.modules.api.components.oscilloscope.OscilloScope;
 import abi16_0_0.host.exp.exponent.modules.api.fbads.AdSettingsManager;
 import abi16_0_0.host.exp.exponent.modules.api.fbads.BannerViewManager;
 import abi16_0_0.host.exp.exponent.modules.api.fbads.InterstitialAdManager;
@@ -161,6 +162,7 @@ public class ExponentPackage implements ReactPackage {
     }
     nativeModules.add(new ImageCropperModule(reactContext));
     nativeModules.add(new TcpSockets(reactContext));
+    nativeModules.add(new OscilloScope(reactContext));
 
     return nativeModules;
   }
